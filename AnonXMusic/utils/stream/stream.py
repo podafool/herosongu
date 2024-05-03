@@ -99,7 +99,7 @@ async def stream(
                     forceplay=forceplay,
                 )
                 img = await get_thumb(vidid, user_id)
-                button = stream_markup(_, chat_id)
+                button = stream_markup(_, vivid, chat_id)
                 run = await app.send_photo(
                     original_chat_id,
                     photo=img,
@@ -185,7 +185,7 @@ async def stream(
                 forceplay=forceplay,
             )
             img = await get_thumb(vidid, user_id)
-            button = stream_markup(_, chat_id)
+            button = stream_markup(_, vivid, chat_id)
             run = await app.send_photo(
                 original_chat_id,
                 photo=img,
@@ -353,7 +353,7 @@ async def stream(
                 forceplay=forceplay,
             )
             img = await get_thumb(vidid, user_id)
-            button = stream_markup(_, chat_id)
+            button = stream_markup(_, vivid, chat_id)
             run = await app.send_photo(
                 original_chat_id,
                 photo=img,
