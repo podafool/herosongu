@@ -24,3 +24,4 @@ youtube-search
 youtube-search-python
 numpy
 pyyaml
+yaml
