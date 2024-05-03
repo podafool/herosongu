@@ -13,7 +13,7 @@ from AnonXMusic.utils.exceptions import AssistantErr
 from AnonXMusic.utils.inline import aq_markup, close_markup, stream_markup
 from AnonXMusic.utils.pastebin import AnonyBin
 from AnonXMusic.utils.stream.queue import put_queue, put_queue_index
-from AnonXMusic.utils.thumbnails import get_thumb
+from AnonXMusic.utils.thumbnails import gen_thumb
 
 
 async def stream(
@@ -98,7 +98,7 @@ async def stream(
                     "video" if video else "audio",
                     forceplay=forceplay,
                 )
-                img = await get_thumb(vidid, user_id)
+                img = await gen_thumb(vidid, user_id)
                 button = stream_markup(_, vivid, chat_id)
                 run = await app.send_photo(
                     original_chat_id,
@@ -184,7 +184,7 @@ async def stream(
                 "video" if video else "audio",
                 forceplay=forceplay,
             )
-            img = await get_thumb(vidid, user_id)
+            img = await gen_thumb(vidid, user_id)
             button = stream_markup(_, vivid, chat_id)
             run = await app.send_photo(
                 original_chat_id,
@@ -352,7 +352,7 @@ async def stream(
                 "video" if video else "audio",
                 forceplay=forceplay,
             )
-            img = await get_thumb(vidid, user_id)
+            img = await gen_thumb(vidid, user_id)
             button = stream_markup(_, vivid, chat_id)
             run = await app.send_photo(
                 original_chat_id,
